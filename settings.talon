@@ -59,7 +59,7 @@ settings():
 
     # Uncomment to add a directory (relative to the Talon user dir) with additional
     # .snippet files. Changing this setting requires a restart of Talon.
-    # user.snippets_dir = "snippets"
+    user.snippets_dir = "./Sandy-Talon/core/snippets/snippets"
 
     # Uncomment to insert text longer than 10 characters (customizable) by pasting from
     # the clipboard. This is often faster than typing.
@@ -88,4 +88,4 @@ settings():
 # By default saying "one" would write "1", however many users find this behavior
 # prone to false positives. If you uncomment this, you will need to say
 # "numb one" to write "1". Note that this tag will eventually be activated by default
-# tag(): user.prefixed_numbers
+tag(): user.prefixed_numbers

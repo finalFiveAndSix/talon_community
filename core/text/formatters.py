@@ -174,11 +174,35 @@ def capitalize_first(text: str) -> str:
 def capitalize(text: str) -> str:
     return text.capitalize()
 
+# this will swap the text for a few of the words in the alphabet
+def keepFirstLetterAndCapitalizeIfStatement(word: str) ->str:
+    word = word.lower()
+
+    # take the first word with a few special cases to replace
+    # for the alphabet
+    if word == "sit":
+        word = "i"
+    elif word == "crunch" or word == "krunch":
+        word = "k"
+    elif word == "plex" or word == "flex" or word == "plea":
+        word = "x"
+    else:
+        word = word[0]
+
+    return word.upper()
+
+def keepFirstLetterAndCapitalize(text: str) -> str:
+    textList = text.split()
+    moddedTextList = [keepFirstLetterAndCapitalizeIfStatement(aWord) \
+                      for aWord in textList]
+    
+    out = "".join(moddedTextList)
+    
+    return out
 
 def lower(text: str) -> str:
     return text.lower()
-
-
+    
 def unformat_upper(text: str) -> str:
     return text.lower() if text.isupper() else text
 
@@ -218,6 +242,7 @@ formatter_list = [
     CustomFormatter("SINGLE_QUOTED_STRING", lambda text: f"'{text}'"),
     CustomFormatter("SPACE_SURROUNDED_STRING", lambda text: f" {text} "),
     CustomFormatter("ALL_CAPS", lambda text: text.upper()),
+    CustomFormatter("CAPITAL_LETTER", keepFirstLetterAndCapitalize, keepFirstLetterAndCapitalize),
     CustomFormatter("ALL_LOWERCASE", lambda text: text.lower()),
     CustomFormatter("COMMA_SEPARATED", lambda text: re.sub(r"\s+", ", ", text)),
     CustomFormatter("REMOVE_FORMATTING", remove_code_formatting),
@@ -244,6 +269,7 @@ formatters_dict = {f.id: f for f in formatter_list}
 # Mapping from spoken phrases to formatter names
 code_formatter_names = {
     "all cap": "ALL_CAPS",
+    "upper letter": "CAPITAL_LETTER",
     "all down": "ALL_LOWERCASE",
     "camel": "PRIVATE_CAMEL_CASE",
     "dotted": "DOT_SEPARATED",
