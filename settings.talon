@@ -59,7 +59,10 @@ settings():
 
     # Uncomment to add a directory (relative to the Talon user dir) with additional
     # .snippet files. Changing this setting requires a restart of Talon.
-    user.snippets_dir = "./Sandy-Talon/core/snippets/snippets"
+    user.snippets_dir = "C:/Users/cjsan/AppData/Roaming/talon/user/Sandy-Talon/core/snippets/snippets"
+
+    # Cursorless settings dir
+    user.cursorless_settings_directory = "C:/Users/cjsan/Repos/cursorless-settings"
 
     # Uncomment to insert text longer than 10 characters (customizable) by pasting from
     # the clipboard. This is often faster than typing.

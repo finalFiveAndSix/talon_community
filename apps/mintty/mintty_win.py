@@ -5,9 +5,11 @@ from talon import Context, Module, actions, settings, ui
 mod = Module()
 mod.apps.mintty = """
 os: windows
-and app.name: Terminal
+and app.exe: mintty.exe
 os: windows
-and app.name: mintty.exe
+and app.name: MSYS2 terminal
+os: windows
+and app.name: Terminal
 """
 
 

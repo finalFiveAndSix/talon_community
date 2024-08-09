@@ -202,7 +202,8 @@ def keepFirstLetterAndCapitalize(text: str) -> str:
 
 def lower(text: str) -> str:
     return text.lower()
-    
+
+
 def unformat_upper(text: str) -> str:
     return text.lower() if text.isupper() else text
 
